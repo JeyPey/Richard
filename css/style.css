@@ -12,32 +12,50 @@ body {
     box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-}
-
 .container {
-    position: absolute;
-    height: 100px;
-    left: 4.65%;
-    right: 15.35%;
+    position: relative;
+    height: 0;
+    left: 0;
 
 }
 
+.suptitle {
+    position: relative;
+    height: 20px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #A8A8A8;
+}
+
+.title {
+    position: relative;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 48px;
+    color: #000000;
+}
+
+.text {
+    position: relative;
+    height: 90px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #6B6B6B;
+}
 
 /* HEADER--------------- */
 
 .header {
-    padding-top: 30px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    width: 80%;
+    position: relative;
+    top: 30px;
+    left: 100px;
     right: 0;
     z-index: 1000;
 }
@@ -64,6 +82,37 @@ h6 {
     margin: 0 30px;
     text-decoration: none;
     color: #fff;
+    position: relative;
+
+    transition: color .1s linear
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    opacity: 0;
+    height: 3px;
+    background-color: rgba(252, 10, 126, 1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity .1s linear;
+}
+
+.nav__link:hover {
+    color: rgba(252, 10, 126, 1);
+}
+
+.nav__link:hover:after,
+.nav__link.active:after {
+    opacity: 1;
+
+}
+
+.nav__link.active {
+    color: rgba(252, 10, 126, 1);
 }
 
 /* INTRO------------- */
@@ -86,7 +135,7 @@ h6 {
 
 .intro_cont {
     width: 677px;
-    position: absolute;
+    position: relative;
     height: 298px;
     left: 10%;
     right: 60.07%;
@@ -100,12 +149,12 @@ h6 {
 }
 
 .intro_image {
-    position: absolute;
-    height: 680px;
+    position: relative;
+    height: 50px;
     width: 652px;
     left: 51.67%;
     right: 3.06%;
-    top: calc(50% - 680px/2 + 60px);
+    top: -40%;
     border-radius: 0px;
 }
 
@@ -133,11 +182,10 @@ h6 {
     color: rgba(107, 107, 107, 1)
 }
 
-
 /* SECTION---------- */
 
 .section {
-    position: absolute;
+    position: relative;
     height: 957px;
     left: 0%;
     right: 0%;
@@ -147,10 +195,10 @@ h6 {
 }
 
 .section__suptitle {
-    position: absolute;
+    position: relative;
     width: 228px;
     height: 20px;
-    left: calc(50% - 228px/2);
+    left: calc(55% - 228px/2);
     top: 100px;
 
     font-weight: 400;
@@ -165,10 +213,10 @@ h6 {
 }
 
 .section__title {
-    position: absolute;
+    position: relative;
     width: 607px;
     height: 96px;
-    left: calc(50% - 607px/2 + 0.5px);
+    left: calc(55% - 607px/2 + 0.5px);
     top: 150px;
     font-weight: 400;
     font-size: 38px;
@@ -178,35 +226,34 @@ h6 {
 }
 
 .section__photo {
-    position: absolute;
+    position: relative;
     width: 1200px;
     height: 656px;
-    left: calc(50% - 1200px/2);
-    top: 301px;
+    left: calc(55% - 1200px/2);
+    top: 185px;
 
     background: url(../images/main/main_photo_table.png);
     border-radius: 0px;
 }
 
 .section__container {
-    position: absolute;
+    position: relative;
     height: 100px;
-    left: 4.65%;
     right: 5%;
 }
 
 /* MAIN-------------------------------- */
 
 .main {
-    position: absolute;
+    position: relative;
     height: 4739.73px;
     left: 0%;
     right: 0%;
-    top: 1895.5px;
+
 }
 
 .main__container {
-    position: absolute;
+    position: relative;
     width: 1296px;
     height: 637px;
     left: calc(50% - 1296px/2);
@@ -216,62 +263,26 @@ h6 {
 }
 
 .main__suptitle {
-    position: absolute;
-    height: 20px;
     left: 13%;
-    right: 0%;
     top: 20px;
-
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    color: #A8A8A8;
-
-
 }
 
 .main__title {
-    position: absolute;
     height: 96px;
     left: 12.89%;
     right: 20%;
-    top: 50px;
-
-    font-weight: 400;
-    font-size: 38px;
-    line-height: 48px;
-    /* or 126% */
-
-
-    color: #000000;
-
 }
 
 
 .main__text {
-    position: absolute;
-    height: 90px;
     left: 12.89%;
-    right: 19.11%;
-    top: 185px;
-
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
-
-
-    color: #6B6B6B;
 }
 
 .main__photo {
-    position: absolute;
+    position: relative;
     height: 637px;
-    left: 53.83%;
-    right: 11.11%;
+    float: right;
+    right: 20%;
     top: calc(55% - 637px/2);
 }
 
@@ -284,11 +295,11 @@ h6 {
 }
 
 .main__container2 {
-    position: absolute;
+    position: relative;
     width: 1296px;
     height: 469px;
     left: calc(50% - 1296px/2);
-    top: calc(50% - 469px/2 - 1257.87px);
+    top: 200px;
 }
 
 .main__block2 {
@@ -301,56 +312,22 @@ h6 {
 }
 
 .main__suptitle2 {
-    position: absolute;
-    height: 20px;
     left: 13%;
-    right: 0%;
     top: 18px;
-
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    color: #A8A8A8;
-
 }
 
 .main__title2 {
-    position: absolute;
     height: 48px;
     left: 12.89%;
     right: 39.56%;
-    top: 35px;
-
-    font-weight: 400;
-    font-size: 38px;
-    line-height: 48px;
-
-
-
-    color: #000000;
 }
 
 .main__text2 {
-    position: absolute;
-    height: 90px;
     left: 12.89%;
-    right: 19.11%;
-    top: 130px;
-
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
-
-
-    color: #6B6B6B;
 }
 
 .main__photo2 {
-    position: absolute;
+    position: relative;
     width: 386px;
     height: 469px;
     left: calc(32% - 386px/2);
@@ -360,11 +337,11 @@ h6 {
 }
 
 .main__container3 {
-    position: absolute;
+    position: relative;
     width: 1296px;
     height: 508px;
     left: calc(50% - 1296px/2);
-    top: calc(50% - 508px/2 - 609.37px);
+    top: 350px;
 }
 
 .main__block3 {
@@ -376,59 +353,25 @@ h6 {
 }
 
 .main__suptitle3 {
-    position: absolute;
-    height: 20px;
     left: 13%;
-    right: 0%;
     top: 20px;
-
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    color: #A8A8A8;
 }
 
 .main__title3 {
-    position: absolute;
     height: 96px;
     left: 12.89%;
     right: 20%;
-    top: 50px;
-
-    font-weight: 400;
-    font-size: 38px;
-    line-height: 48px;
-
-
-
-    color: #000000;
 }
 
 .main__text3 {
-    position: absolute;
-    height: 90px;
     left: 12.89%;
-    right: 19.11%;
-    top: 185px;
-
-
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
-
-
-    color: #6B6B6B;
 }
 
 .main__photo3 {
-    position: absolute;
+    position: relative;
     width: 341px;
     height: 508px;
-    right: 20%;
+    left: 55%;
     top: calc(70% - 637px/2);
 
 
@@ -438,11 +381,11 @@ h6 {
 /* FACILITIES------------ */
 
 .facilities {
-    position: absolute;
+    position: relative;
     width: 1296px;
     height: 209px;
     left: calc(50% - 1296px/2);
-    top: calc(50% - 209px/2 - 91.87px);
+    top: 12%;
 }
 
 .facilities__block1 {
@@ -453,7 +396,7 @@ h6 {
     top: calc(50% - 209px/2);
 }
 
-.facilities__icon1 {
+.facilities__icon {
     position: absolute;
     width: 80px;
     height: 35px;
@@ -463,7 +406,7 @@ h6 {
     border-radius: 0px;
 }
 
-.facilities__title1 {
+.facilities__title {
     position: absolute;
     width: 181px;
     height: 24px;
@@ -479,7 +422,7 @@ h6 {
     color: #000000;
 }
 
-.facilities__text1 {
+.facilities__text {
     position: absolute;
     width: 371px;
     height: 90px;
@@ -503,48 +446,6 @@ h6 {
     top: calc(50% - 209px/2);
 }
 
-.facilities__icon2 {
-    position: absolute;
-    width: 74px;
-    height: 35px;
-    left: calc(50% - 74px/2);
-    top: 0px;
-
-    border-radius: 0px;
-}
-
-.facilities__title2 {
-    position: absolute;
-    width: 130px;
-    height: 24px;
-    left: calc(50% - 130px/2);
-    top: 75px;
-
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-
-
-    text-align: center;
-
-    color: #000000;
-}
-
-.facilities__text2 {
-    position: absolute;
-    width: 371px;
-    height: 90px;
-    left: calc(50% - 371px/2 - 0.5px);
-    top: 116px;
-
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
-
-    text-align: center;
-
-    color: #6B6B6B;
-}
 
 .facilities__block3 {
     position: absolute;
@@ -554,218 +455,401 @@ h6 {
     top: calc(50% - 209px/2);
 }
 
-.facilities__icon3 {
-    position: absolute;
-    width: 40px;
-    height: 35px;
-    left: calc(50% - 40px/2);
-    top: 0px;
 
-    border-radius: 0px;
-}
-
-.facilities__title3 {
-    position: absolute;
-    width: 151px;
-    height: 24px;
-    left: calc(50% - 151px/2 + 0.5px);
-    top: 75px;
-
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-
-
-    text-align: center;
-
-    color: #000000;
-}
-
-.facilities__text3 {
-    position: absolute;
-    width: 371px;
-    height: 90px;
-    left: calc(50% - 371px/2 + 0.5px);
-    top: 116px;
-
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
-
-    text-align: center;
-
-    color: #6B6B6B;
-}
 
 /* STATISTIC-------------- */
 
-.statistic {
+.statistics {
+    position: relative;
+    top: 15%;
+    background-color: #FC0A7E;
+    color: rgba(255, 255, 255, 1);
+    z-index: 2;
+}
+
+.stat {
+    display: flex;
+}
+
+.stat__item {
+    flex: 1 1 0;
+    padding: 70px 25px;
+
+    border-left: 1px solid rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+.stat__item:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 1);
+}
+
+.stat__count {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat__text {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+/* UNDER MAIN---------------------------- */
+
+.undermain1 {
+    position: relative;
+    width: 1296px;
+    height: 414px;
+    left: calc(50% - 1296px/2);
+    top: 16%;
+}
+
+.undermain___block1 {
+    position: absolute;
+    height: 381px;
+    left: 11.11%;
+    right: 54.17%;
+    top: calc(50% - 381px/2 + 0.5px);
+}
+
+.undermain__suptitle1 {
+    left: 13%;
+
+}
+
+.undermain__title1 {
+    height: 96px;
+    left: 12.89%;
+    right: 29.78%;
+}
+
+.undermain__text1 {
+    left: 12.89%;
+}
+
+.undermain__photo1 {
+    position: relative;
+    height: 414px;
+    left: 130%;
+    right: 11.11%;
+    bottom: 60%;
+}
+
+.undermain__textUP {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.undermain2 {
+    position: relative;
+    width: 1296px;
+    height: 414px;
+    left: calc(45% - 1296px/2);
+    top: 20%;
+}
+
+
+.undermain___block2 {
+    position: absolute;
+    height: 333px;
+    left: 55%;
+    right: 10%;
+    top: 40px;
+}
+
+.undermain__suptitle2 {
+    left: 30%;
+}
+
+.undermain__title2 {
+    height: 48px;
+    left: 30%;
+    right: 19.56%;
+}
+
+.undermain__text2 {
+    left: 30%;
+}
+
+
+.undermain__photo2 {
+    position: relative;
+    height: 414px;
+    right: 100%;
+    bottom: 90%;
+}
+
+/* Information---------------- */
+
+.information {
     position: absolute;
     width: 1296px;
-    height: 134px;
+    height: 480px;
     left: calc(50% - 1296px/2);
-    top: calc(50% - 134px/2 + 239.63px);
-
+    top: calc(50% - 480px/2 + 1855.63px);
 }
 
-.statistic__block1 {
+.information__block {
     position: absolute;
-    height: 134px;
+    height: 374.14px;
+    left: 22.22%;
+    right: 22.22%;
+    top: 0px;
+}
+
+.information__icon {
+    text-align: center;
+}
+
+.information__text {
+    position: relative;
+    width: 700px;
+    left: calc(50% - 700px/2);
+    top: 60px;
+
+    font-size: 24px;
+    line-height: 40px;
+
+    text-align: center;
+}
+
+.information__undtext {
+    position: absolute;
+    height: 40px;
     left: 0%;
-    right: 75%;
-    top: calc(50% - 134px/2);
+    right: 0%;
+    top: 334.14px;
 }
 
-.statistic__number1 {
-    position: absolute;
-    width: 129px;
-    height: 90px;
-    left: calc(50% - 129px/2 + 0.5px);
-    top: 0px;
+.undtext {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 16px;
+    padding: 0 70px;
+}
 
+
+
+/* UNDER IMAGE---------- */
+
+.under_image {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    text-align: justify;
+}
+
+.box_under {
+    position: absolute;
+    width: 1296px;
+    height: 115px;
+    left: calc(50% - 1296px/2);
+    top: calc(50% - 115px/2 + 2234.13px);
+}
+
+
+
+/* UNDER READY--------------- */
+
+.under {
+    position: relative;
+    left: 0%;
+    right: 0%;
+}
+
+.under_download {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 474px;
+    background: url("../images/bottom/background_bottom.png"), center, no-repeat;
+    background-size: cover;
+}
+
+.under__box {
+    position: relative;
+    width: 395px;
+    height: 234px;
+    left: calc(50% - 395px/2 + 0.5px);
+    top: calc(25% - 234px/2 + 4px);
+}
+
+.under__title {
+    position: relative;
+    width: 607px;
+    height: 96px;
+    left: calc(50% - 607px/2 + 0.5px);
+    top: 20px;
     font-weight: 400;
-    font-size: 59px;
-    line-height: 90px;
-
+    font-size: 38px;
+    line-height: 48px;
     text-align: center;
-
-    color: #333333;
+    color: rgba(255, 255, 255, 1);
 }
 
-.statistic__text1 {
-    position: absolute;
-    width: 163px;
-    height: 34px;
-    left: calc(50% - 163px/2 + 5.5px);
-    top: 130px;
-
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-
-
-    text-align: center;
-
-    color: #000000;
-}
-
-.statistic__block2 {
-    position: absolute;
-    height: 134px;
-    left: 25%;
-    right: 50%;
-    top: calc(50% - 134px/2);
-}
-
-.statistic__number2 {
-    position: absolute;
-    width: 66px;
-    height: 90px;
-    left: calc(50% - 66px/2);
-    top: 0px;
-
+.btn1 {
+    display: inline-block;
+    vertical-align: top;
+    padding: 25px 35px;
+    border: 1px solid rgba(176, 75, 179, 1);
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
     font-weight: 400;
-    font-size: 59px;
-    line-height: 90px;
+    margin: 15px 0 0 0;
 
-    text-align: center;
+    transition: background .1s linear, color .1s linear;
 
-    color: #333333;
 }
 
-.statistic__text2 {
-    position: absolute;
-    width: 193px;
-    height: 24px;
-    left: calc(50% - 193px/2 + 0.5px);
-    top: 130px;
-
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-
-    text-align: center;
-
-    color: #000000;
-}
-
-.statistic__block3 {
-    position: absolute;
-    height: 134px;
-    left: 50%;
-    right: 25%;
-    top: calc(50% - 134px/2);
-}
-
-.statistic__number3 {
-    position: absolute;
-    width: 120px;
-    height: 90px;
-    left: calc(50% - 120px/2);
-    top: 0px;
-
+.btn2 {
+    display: inline-block;
+    vertical-align: top;
+    padding: 25px 35px;
+    border: 1px solid rgba(176, 75, 179, 1);
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
     font-weight: 400;
-    font-size: 59px;
-    line-height: 90px;
+    margin: 15px 0 0 40px;
 
+    transition: background .1s linear, color .1s linear;
 
+}
+
+.btn1:hover {
+    background-color: #FC0A7E;
+    ;
+
+}
+
+.btn2:hover {
+    background-color: #FC0A7E;
+    ;
+
+}
+
+/* Under Email---------------- */
+
+.under__email {
+    position: relative;
+    height: 463px;
+    background: #1B1B1B;
+}
+
+.email__box {
+    position: absolute;
+    width: 465px;
+    left: calc(50% - 465px/2 + 0.5px);
+    top: calc(50% - 303px/2 + 9px);
+}
+
+.title__email {
+    position: relative;
+    top: 40px;
+    font-size: 38px;
+    line-height: 48px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.undtitle__email {
+    position: relative;
+    width: 334px;
+
+    left: calc(50% - 334px/2 - 0.5px);
+    top: 50px;
     text-align: center;
 
-    color: #333333;
 }
 
-.statistic__text3 {
-    position: absolute;
-    width: 129px;
-    height: 24px;
-    left: calc(50% - 129px/2 + 0.5px);
-    top: 130px;
+.header_input {
+    background: rgba(255, 255, 255, 5);
+    display: inline-block;
+    margin: 90px 80px 90px 80px;
+    padding: 20px;
+    border-radius: 3px 0px 0px 3px;
 
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-
-    text-align: center;
-
-    color: #000000;
 }
 
-.statistic__block4 {
-    position: absolute;
-    height: 134px;
-    left: 75.85%;
-    right: -0.85%;
-    top: calc(50% - 134px/2);
-}
-
-.statistic__number4 {
-    position: absolute;
-    width: 100px;
-    height: 90px;
-    left: calc(50% - 100px/2);
-    top: 0px;
-
+.btn3 {
+    display: inline-block;
+    padding: 19px 15px;
+    border: 1px solid;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
     font-weight: 400;
-    font-size: 59px;
-    line-height: 90px;
+    margin: 0 0 0 -93px;
 
-    text-align: center;
+    transition: background .1s linear, color .1s linear;
 
-    color: #333333;
 }
 
-.statistic__text4 {
+.btn3:hover {
+    background-color: #FC0A7E;
+    ;
+
+}
+
+/* Under Last------------ */
+
+.under__last {
+    position: relative;
+    height: 245px;
+
+    background: #1B1B1B;
+}
+
+
+
+.last__box {
     position: absolute;
-    width: 106px;
-    height: 24px;
-    left: calc(50% - 106px/2);
-    top: 130px;
-
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-
-    text-align: center;
-
-    color: #000000;
+    left: calc(50% - 575px/2);
 }
+
+
+
+.last__image {
+    position: relative;
+    height: 104px;
+    left: calc(50% - 136px/2);
+}
+
+
+
+.last__url {
+    position: relative;
+    height: 78px;
+    left: 0%;
+    right: 0%;
+    top: 124.08px;
+}
+
+.nav_under {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 20px;
+}
+
+.link__under {
+    display: inline-block;
+    margin: 60px 17px;
+    text-decoration: none;
+    color: #6B6B6B;
+    text-align: center;
+}
+
+/* P.S. Я знаю что супер-тупо написано, тут картинки это просто кошмар какой то,
+я с ними промахался два дня и ничего не смог с этим поделать ( чтобы под телефоны сделать )
+поэтому сайт без телефон. разрешения, увы.*/
+
+/* P.S.S. Дааа я использовал абсолюты и топы, как оказалось всё что я делал в фигме я делал неправильно
+и понял это только в понедельник ыыы. Придётся паралелльно с джс набивать руку с адекватной версткой */
+
+/* P.S.S.S. Xd 
+Спасибо за уроки! Не подведу!!! */
